@@ -46,14 +46,15 @@ fetch('https://scrivers.s3.sa-east-1.amazonaws.com/data.json')
                         var readTime = riverData[i] ? new Date(riverData[i].Leitura) : new Date();
                         var formattedTime = readTime.getHours().toString().padStart(2, '0') + ':' + readTime.getMinutes().toString().padStart(2, '0');
 
-                        var levelElement = document.querySelector(`#index-${indexId} .chart-text #level`);
-                        var hourElement = document.querySelector(`#index-${indexId} .chart-text #hour`);
+                        var levelElement = document.querySelector(`.chart#${riverId} > .chart-bars > #index-${indexId} .chart-text #level`);
+                        var hourElement = document.querySelector(`.chart#${riverId} > .chart-bars > #index-${indexId} .chart-text #hour`);
 
                         if (levelElement && hourElement) {
                             levelElement.textContent = level;
                             hourElement.textContent = formattedTime;
                         }
                         //console.log(`Dados para river ${riverId}, index ${indexId}: level = ${level}, time = ${formattedTime}`);
+                        console.log(`Selectors for river ${riverId} index ${indexId}:`, levelElement, hourElement);
                     }
 
                 });
