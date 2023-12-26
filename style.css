@@ -174,7 +174,10 @@ h3{
 }
 .chart-bar .progress{
 	flex: 1 0 0;
-	background: #2563EB;
+	background: #1E40AF;
+}
+#index-00 .chart-bar .progress{
+	background: #60A5FA;
 }
 .chart-text{
 	flex-direction: column;
