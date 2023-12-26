@@ -4,29 +4,49 @@ html, body{
 	color: #fafafa;
 	margin: 0 auto;
 }
-.page{
+.page,
+.row,
+.cards-group,
+.title,
+.cards,
+.card,
+.card .label,
+.chart,
+.chart div,
+.card .header,
+.header-title,
+.river-variation,
+.read-info,
+.read-data,
+.level-progress,
+.level-progress-bar,
+.level-mode,
+.lvl-bar,
+.level-names,
+.level-names p{
 	display: flex;
+}
+.page{
 	padding: 64px;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 64px;
 }
 .row{
-	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 32px;
-	align-self: stretch;
+	align-self: center;
+    width: 100%;
+    max-width: 1600px;
 }
 .cards-group{
-	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 32px;
 	align-self: stretch;
 }
 .title{
-	display: flex;
 	align-items: center;
 	gap: 8px;
 	color: #475569;
@@ -52,7 +72,6 @@ h3{
 	font-weight: 400;
 }
 .cards{
-	display: flex;
 	align-items: center;
 	align-content: center;
 	gap: 16px;
@@ -60,7 +79,6 @@ h3{
 	flex-wrap: wrap;
 }
 .card{
-	display: flex;
 	padding: 24px;
 	flex-direction: column;
 	justify-content: center;
@@ -94,7 +112,6 @@ h3{
 	color: #7F1D1D;
 }
 .card .label{
-	display: flex;
 	padding: 4px 0px;
 	justify-content: center;
 	align-items: center;
@@ -125,43 +142,46 @@ h3{
 }
 .card.chart{
 	gap: 16px;
+	align-items: stretch;
 }
 .card.chart .chart-title{
 	font-size: 16px;
+	justify-content: center;
 }
 .card.chart .chart-bars{
-	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	gap: 5%;
 	align-self: stretch;
+	height: 200px;
 }
 .chart-data{
-	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
 	gap: 8px;
-	border-radius: 8px;
-}
-.chart-bar .progress{
-	display: flex;
-	width: 32px;
-	border-radius: 0px 0px 8px 8px;
-	background: #2563EB;
+	flex: 1 0 0;
+	align-self: stretch;
 }
 .chart-bar{
-	display: flex;
-	height: 100px;
 	justify-content: center;
 	align-items: flex-end;
+	gap: 10px;
+	flex: 1 0 0;
+	align-self: stretch;
 	background: #1F2937;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.chart-bar .progress{
+	flex: 1 0 0;
+	background: #2563EB;
 }
 .chart-text{
-	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
 	gap: 6px;
+	align-self: stretch;
 }
 .chart-text #hour,
 .chart-text #level{
@@ -174,14 +194,12 @@ h3{
 	color: #64748B;
 }
 .card .header{
-	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 12px;
 	align-self: stretch;
 }
 .header-title{
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	align-self: stretch;
@@ -196,7 +214,6 @@ h3{
 	color: #94a3b8;
 }
 .river-variation{
-	display: flex;
 	padding: 8px 12px;
 	justify-content: center;
 	align-items: center;
@@ -220,7 +237,6 @@ h3{
 	fill: #EF4444;
 }
 .read-info{
-	display: flex;
 	align-items: center;
 	gap: 32px;
 	align-self: stretch;
@@ -229,7 +245,6 @@ h3{
 	line-height: 14px; /* 100% */
 }
 .read-data{
-	display: flex;
 	align-items: center;
 	gap: 4px;
 }
@@ -241,7 +256,6 @@ h3{
 	color: #FAFAFA;
 }
 .level-progress{
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -249,7 +263,6 @@ h3{
 	align-self: stretch;
 }
 .level-progress-bar{
-	display: flex;
 	height: 10px;
 	justify-content: center;
 	align-items: center;
@@ -258,27 +271,16 @@ h3{
 	align-self: stretch;
 }
 .level-mode{
-	display: flex;
 	align-items: center;
 	align-self: stretch;
 	border-radius: 4px;
 	background: #1F2937;
 }
-/*#river-01.level-mode.normal{
-	flex-basis: 44.736%;
-}
-#river-01.level-mode.attention{
-	flex-basis: 10.931%;
-}
-#river-01.level-mode.alert{
-	flex-basis: 19.433%;
-}*/
 .level-mode.emergency{
 	flex-basis: auto;
 	flex-grow: 1;
 }
 .lvl-bar{
-	display: flex;
 	align-items: flex-start;
 	align-self: stretch;
 	border-radius: 4px;
@@ -296,13 +298,11 @@ h3{
 	background: #DC2626;
 }
 .level-names{
-	display: flex;
 	align-items: center;
 	gap: 32px;
 	align-self: stretch;
 }
 .level-names p{
-	display: flex;
 	align-items: center;
 	gap: 4px;
 	color: #64748B;
@@ -356,6 +356,15 @@ h3{
 	}
 	.card.info{
 		gap: 16px;
+	}
+	.card.chart .chart-bars{
+		gap: 4%;
+	}
+	.chart-text{
+		display: none!important;
+	}
+	.chart-bar{
+		border-radius: 4px;
 	}
 	.header-title{
 		flex-wrap: wrap;
